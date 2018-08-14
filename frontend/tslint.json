@@ -1,0 +1,48 @@
+{
+  "extends": [
+    "angular-tslint-rules"
+  ],
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "typedef": [true, "member-variable-declaration"],
+    "prefer-conditional-expression": false,
+    "no-inferrable-types": false,
+    "no-forward-ref": false,
+    "no-null-keyword": false,
+    "radix": false,
+    "no-trailing-whitespace": [true, "ignore-blank-lines"],
+    "object-literal-shorthand": false,
+    "curly": [
+      true
+    ],
+    "pipe-naming": [
+      true,
+      "camelCase",
+      "app"
+    ],
+    "array-type": [
+      true,
+      "array-simple"
+    ],
+    "no-empty": false,
+    "no-console": false,
+    "no-output-on-prefix": false,
+    "max-line-length": [
+      true,
+      {
+        "limit": 140,
+        "ignore-pattern": "^import |^export {(.*?)}"
+      }
+    ],
+    "trackBy-function": false,
+    "newline-per-chained-call": false,
+    "comment-format": false,
+    "no-output-named-after-standard-event": false,
+    "no-dynamic-delete": false,
+    "no-unused-css": false,
+    "i18n": false
+  }
+}

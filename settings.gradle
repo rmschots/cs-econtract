@@ -1,0 +1,12 @@
+rootProject.name = 'econtract'
+include 'backend'
+include 'econtract-core'
+rootProject.children.each { project ->
+    project.projectDir = "$rootDir/${project.name}" as File
+
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.exists()
+    assert project.buildFile.isFile()
+}
+include 'frontend'
+

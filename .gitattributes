@@ -1,0 +1,42 @@
+* text=auto
+
+#JAVA
+*.java text eol=lf
+*.properties text eol=lf
+
+#XML
+*.xml text eol=lf
+*.xsd text eol=lf
+
+#SQL
+*.sql text eol=lf
+
+#SHELL
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+
+#WEB
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+
+#C/C++
+*.cpp text eol=lf
+*.h text eol=lf
+
+#Perl
+*.pl text eol=lf
+
+#Afbeeldingen
+*.gif binary
+*.png binary
+*.jpg binary
+
+#Java keystore
+*.jks binary
+*.jar binary
+
+#Windows DLL
+*.dll binary

@@ -1,0 +1,53 @@
+dependencies {
+//spring boot
+    compile "javax.interceptor:javax.interceptor-api:$interceptorVersion"
+    //lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    apt "org.projectlombok:lombok:$lombokVersion"
+
+    // Mappers
+    compile "org.mapstruct:mapstruct-jdk8:$mapstructVersion"
+    apt "org.mapstruct:mapstruct-processor:$mapstructVersion"
+
+    //JPA
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+    compile "com.querydsl:querydsl-root:$querydslVersion"
+    compile "com.querydsl:querydsl-jpa:$querydslVersion"
+    apt "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$hibernateJpaVersion"
+    apt "com.querydsl:querydsl-apt:$querydslVersion:jpa"
+
+    compile 'be.e_contract.dssp:dssp-client:1.5.1'
+
+    //Test
+    testCompile "junit:junit:$jUnitVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+
+    compile "org.springframework.boot:spring-boot-starter-mail"
+    compile "org.hibernate:hibernate-java8:$hibernateJava8Version"
+    compileOnly "org.springframework.boot:spring-boot-starter-data-jpa"
+
+    compileOnly "com.fasterxml.jackson.core:jackson-annotations"
+    compileOnly "org.springframework.boot:spring-boot-starter-web"
+
+    //lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    apt "org.projectlombok:lombok:$lombokVersion"
+
+    compile "org.apache.commons:commons-lang3:$apacheCommonsLang3Version"
+    compile "commons-io:commons-io:$apacheCommonsVersion"
+
+    compile "org.springframework.security:spring-security-core:4.2.3.RELEASE"
+
+    compile "com.itextpdf:itextpdf:$iTextVersion"
+
+    compile "net.openhft:zero-allocation-hashing:$zeroAllocationHashingVersion"
+
+    //querydsl
+    compile "com.querydsl:querydsl-root:$querydslVersion"
+    compile "com.querydsl:querydsl-jpa:$querydslVersion"
+    apt "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$hibernateJpaVersion"
+    apt "com.querydsl:querydsl-apt:$querydslVersion:jpa"
+
+    testCompile "junit:junit:$jUnitVersion"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
