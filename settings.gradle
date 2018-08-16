@@ -1,6 +1,5 @@
 rootProject.name = 'econtract'
 include 'backend'
-include 'econtract-core'
 rootProject.children.each { project ->
     project.projectDir = "$rootDir/${project.name}" as File
 

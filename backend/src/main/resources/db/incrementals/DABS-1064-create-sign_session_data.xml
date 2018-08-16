@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="createPersonTable" author="rma">
+        <createTable tableName="sign_session_data">
+            <column name="security_token_id" type="varchar2(64)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="completion_url" type="varchar2(64)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="filename" type="varchar(254)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="mime_type" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="digital_signature_service_session" type="blob">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="signed_document" type="blob"/>
+
+            <column name="creation_date" type="datetime(6)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="creation_user" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="sign_session_data"/>
+        </rollback>
+        <modifySql dbms="mysql">
+            <append value="ENGINE=INNODB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci"/>
+        </modifySql>
+    </changeSet>
+</databaseChangeLog>

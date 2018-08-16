@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BaseModule, ConfigurationService, GlobalMessageModule, MultiTranslateHttpLoader } from '@cipalschaubroeck/jangosquare-common';
+import { KeycloakModule, KeycloakService, TenantZonesService } from '@cipalschaubroeck/jangosquare-keycloak-integration';
+import { appInitializer } from './app-initializer';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -10,9 +14,27 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    KeycloakModule,
+    TranslateModule.forRoot(),
+    GlobalMessageModule.forRoot(),
+    BaseModule
   ],
-  providers: [],
+  providers: [
+    ConfigurationService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializer,
+      multi: true,
+      deps: [
+        ConfigurationService,
+        HttpClient,
+        KeycloakService,
+        TenantZonesService
+      ]
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

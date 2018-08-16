@@ -1,0 +1,4 @@
+{
+  "connection": "http://localhost:9000/econtract-backend/",
+  "api_base": "api/v1/"
+}

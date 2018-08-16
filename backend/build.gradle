@@ -58,9 +58,6 @@ war {
 }
 
 dependencies {
-    // common
-    compile project(":econtract-core")
-
     // spring
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "org.springframework.boot:spring-boot-starter-web"
@@ -76,16 +73,13 @@ dependencies {
     compile "commons-io:commons-io:$apacheCommonsVersion"
     compile "org.apache.commons:commons-lang3:$apacheCommonsLang3Version"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
-    compile "org.mapstruct:mapstruct-jdk8:$mapstructVersion"
-    apt "org.mapstruct:mapstruct-processor:$mapstructVersion"
-
-    // metrics
-    compile "com.zaxxer:HikariCP"
 
     // database
     compile "org.liquibase:liquibase-core"
     compile "com.h2database:h2"
     compile "org.mariadb.jdbc:mariadb-java-client"
+    // Connection pool
+    compile("com.zaxxer:HikariCP")
 
     // swagger
     compile "io.springfox:springfox-swagger-ui:$swaggerVersion"
@@ -99,17 +93,14 @@ dependencies {
     compileOnly "org.projectlombok:lombok:$lombokVersion"
     apt "org.projectlombok:lombok:$lombokVersion"
 
-    compile "org.quartz-scheduler:quartz:$quartzVersion"
-    compile "org.quartz-scheduler:quartz-jobs:$quartzVersion"
-    compile "org.springframework:spring-context-support"
+    // OTHER
+    compile "be.e_contract.dssp:dssp-client:$dsspClientVersion"
 
+    // DEV
     runtime "org.springframework.boot:spring-boot-devtools"
 
     // TESTS
     testCompile "org.springframework.boot:spring-boot-starter-test"
-    testCompile("org.dbunit:dbunit:$dbunitVersion") {
-        exclude(module: 'junit')
-    }
     testCompile "org.keycloak:keycloak-jetty91-adapter:$keycloakVersion"
     testCompileOnly "org.projectlombok:lombok:$lombokVersion"
     testApt "org.projectlombok:lombok:$lombokVersion"

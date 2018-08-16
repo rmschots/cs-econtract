@@ -1,4 +1,8 @@
-<div>
+<input type="file"
+       id="file"
+       (change)="handleFileInput($event.target.files)">
+<div *ngIf="convertingBase64$ | async">Converting to base64</div>
+<div *ngIf="fileSelected$ | async">
     <button (click)="signDocument()">Sign</button>
 </div>
 <div>
